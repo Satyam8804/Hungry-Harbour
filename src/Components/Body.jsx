@@ -38,7 +38,7 @@ const Body = () => {
       <div className="w-full p-4 flex flex-wrap justify-center items-center">
         <h3 className="text-2xl font-bold">{title}</h3>
       </div>
-      <div className="w-full p-4 flex flex-wrap justify-center items-center gap-4">
+      <div className="w-full py-4 flex flex-wrap justify-center items-center gap-4">
         {
           filteredRestaurantData && filteredRestaurantData?.length === 0 ? (
             <NoData data="No Restaurant Found !" />

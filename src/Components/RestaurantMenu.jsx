@@ -58,7 +58,7 @@ const RestaurantMenu = () => {
           </Link>
         </div>
         <RestaurantInfo resDetails={resDetails} />
-        <div className="mt-4 flex flex-col gap-2 bg-slate-100">
+        <div className="mt-4 flex flex-col gap-2 bg-slate-100 ">
           {categories?.map((category, idx) => (
             <ResCategory
               data={category?.card?.card}
