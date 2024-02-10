@@ -5,9 +5,10 @@ import { Link } from "react-router-dom";
 const RestaurantCard = ({ restaurantData }) => {
   const { name, cloudinaryImageId, avgRating, cuisines, sla, id } =
     restaurantData;
+
   return (
     <Link to={"/restaurants/" + id}>
-      <div className="h-auto w-56 p-4 shadow-md rounded-md transition-transform duration-300 flex flex-col gap-4 bg-white">
+      <div className="h-auto w-[300px] md:w-56 p-4 shadow-md rounded-md transition-transform duration-300 flex flex-col gap-4 bg-white">
         <img
           className="w-full h-40 rounded-md transition-all ease-in-out duration-300"
           src={IMG_URL + cloudinaryImageId}

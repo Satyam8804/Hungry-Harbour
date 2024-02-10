@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import RestaurantCard, { withPromotedLabel } from './RestaurantCard';
+import RestaurantCard from './RestaurantCard';
 import Shimmer from './Shimmer';
 import useRestaurant from '../utils/UseRestaurant.js';
 import NoData from './NoData.js';
@@ -9,8 +9,7 @@ const Body = () => {
 
 
   const { restaurantData, title, filteredRestaurantData, setFilteredRestaurantData } = useRestaurant();
-
-  const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
+  console.log(restaurantData)
 
   const handleSearch = () => {
     const filteredData = restaurantData.filter(e => e.info.name.toLowerCase().includes(searchText.toLowerCase()));
@@ -44,9 +43,9 @@ const Body = () => {
             <NoData data="No Restaurant Found !" />
           ) : (
             filteredRestaurantData?.map((data) => (
-              data?.info?.promoted?(<RestaurantCardPromoted restaurantData={data?.info} key={data?.info?.id} />):(<RestaurantCard restaurantData={data?.info} key={data?.info?.id} />)
+            <RestaurantCard restaurantData={data?.info} key={data?.info?.id} />)
             ))
-          )}
+          }
       </div>
     </div>
   );
