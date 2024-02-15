@@ -9,7 +9,7 @@ const Body = () => {
 
 
   const { restaurantData, title, filteredRestaurantData, setFilteredRestaurantData } = useRestaurant();
-  console.log(restaurantData)
+  // console.log(restaurantData)
 
   const handleSearch = () => {
     const filteredData = restaurantData.filter(e => e.info.name.toLowerCase().includes(searchText.toLowerCase()));

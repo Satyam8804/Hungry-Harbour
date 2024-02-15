@@ -1,8 +1,10 @@
  export const IMG_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"
 
- export const API_URL ="https://proxy.cors.sh/https://www.swiggy.com/dapi/restaurants/list/v5?"
+ export const API_URL ="https://www.swiggy.com/dapi/restaurants/list/v5?"
 
- export const MENU_API_URL ="https://proxy.cors.sh/https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&"
+ export const MENU_API_URL ="https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&"
+
+ export const CORS_URL = "https://corsproxy.io/"
 
 //  31.251558039722273, 75.70426545767128
 
