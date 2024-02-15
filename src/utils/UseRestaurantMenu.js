@@ -7,6 +7,7 @@ const useRestaurantMenu=(resId)=>{
 
     const [resInfo, setResInfo] = useState(null)
 
+
     const fetchData = async () => {
         try {
             const data = await fetch(CORS_URL+MENU_API_URL+"lat="+userLocation?.latitude+"&lng="+userLocation?.longitude+"&submitAction=ENTER&restaurantId=" + resId);
@@ -19,7 +20,7 @@ const useRestaurantMenu=(resId)=>{
 
     useEffect(()=>{
         fetchData();
-    },[])
+    },[userLocation?.latitude ,userLocation?.longitude])
 
    
 

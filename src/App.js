@@ -5,13 +5,18 @@ import { LocationProvider } from "./utils/LocationContext";
 
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
+import { useState } from "react";
+
 
 function App() {
+
+  const [searchVisible, setSearchVisible]= useState(false)
+
   return (
     <Provider store={appStore}>
     <LocationProvider>
       <div className="App">
-        <Header />
+        <Header setSearchVisible={setSearchVisible} searchVisible={searchVisible} />
         <Outlet />
       </div>
     </LocationProvider>  

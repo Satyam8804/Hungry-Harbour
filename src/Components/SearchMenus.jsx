@@ -46,7 +46,7 @@ const SearchMenus = () => {
             <div className="md:w-1/2 mt-4 w-[70%]">
                 <div className="w-full flex justify-start items-center border-b-2">
                     <span className='cursor-pointer' ><GoArrowLeft onClick={() => { navigate(-1) }} /></span>
-                    <input type="text" placeholder={"Search in " + resDetails?.name} value={searchText} className='p-4 w-[100%] border-0 outline-none focus:border-0' onChange={(e) => { setSearchText(e.target.value) }} />
+                    <input type="text" placeholder={"Search in " + resDetails?.name} value={searchText} className='p-4 w-[100%] border-0 outline-none focus:border-0  ' onChange={(e) => { setSearchText(e.target.value) }} />
                     <CiSearch />
                 </div>
 

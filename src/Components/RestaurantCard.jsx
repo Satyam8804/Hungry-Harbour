@@ -1,28 +1,34 @@
 import React from "react";
 import { IMG_URL } from "../utils/data";
 import { Link } from "react-router-dom";
+import { MdStars } from "react-icons/md";
+
 
 const RestaurantCard = ({ restaurantData }) => {
-  const { name, cloudinaryImageId, avgRating, cuisines, sla, id } =
-    restaurantData;
+  const { name, cloudinaryImageId, avgRating, cuisines, sla, id ,areaName } =
+    restaurantData ?? {};
 
   return (
     <Link to={"/restaurants/" + id}>
-      <div className="h-auto w-[300px] md:w-56 p-4 shadow-md rounded-md transition-transform duration-300 flex flex-col gap-4 bg-white">
+      <div className="sm:h-auto sm:w-[250px] w-full p-2 transition-transform duration-300 flex flex-row hover:scale-105 sm:flex-col gap-4 justify-center">
         <img
-          className="w-full h-40 rounded-md transition-all ease-in-out duration-300"
+          className="sm:w-full w-[150px] h-40 rounded-2xl transition-all ease-in-out duration-300 "
           src={IMG_URL + cloudinaryImageId}
           alt="res-logo"
         />
-        <p className="text-lg font-bold overflow-hidden overflow-ellipsis whitespace-nowrap m-0 no-underline">
+        <div className="w-full px-4 flex flex-col">
+        <span className="text-lg font-bold overflow-hidden overflow-ellipsis whitespace-nowrap m-0 no-underline text-gray-700">
           {name}
-        </p>
-        <span className="text-xs block break-words">
+        </span>
+        <div className="flex gap-2 items-center">
+          <span><MdStars color="green" size={20}/></span>
+          <span className="text-sm text-gray-500 font-bold">{avgRating} stars</span>
+          <span className="text-sm text-gray-500 font-bold">{sla.deliveryTime} mins</span>
+        </div>
+        <span className="text-sm block break-words text-gray-500">
           {cuisines.slice(0, 3).join(",")}
         </span>
-        <div className="flex justify-between">
-          <span className="text-xs">{avgRating} stars</span>
-          <span className="text-xs">{sla.deliveryTime} mins</span>
+       <span className="text-sm text-gray-500">{areaName}</span>
         </div>
       </div>
     </Link>

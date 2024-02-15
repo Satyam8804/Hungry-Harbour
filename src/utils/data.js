@@ -4,7 +4,10 @@
 
  export const MENU_API_URL ="https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&"
 
- export const CORS_URL = "https://corsproxy.io/"
+ export const CORS_URL = "https://thingproxy.freeboard.io/fetch/"
+
+ export const MOB_REST_API =
+  "https://www.swiggy.com/mapi/restaurants/list/v5?"
 
 //  31.251558039722273, 75.70426545767128
 
@@ -13,3 +16,9 @@
 // bangalore  13.00535708692319, 77.58995360194062
 
 // {latitude: 31.2590366, longitude: 75.7008868}
+
+
+
+
+// lat=19.0177989&lng=72.84781199999999
+// lat=19.0177989&lng=72.84781199999999

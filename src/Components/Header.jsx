@@ -4,26 +4,33 @@ import { NavLink ,Link} from 'react-router-dom';
 import useOnlineStatus from "../utils/UseOnlineStatus.js";
 import { useSelector } from 'react-redux';
 import { TiShoppingCart } from "react-icons/ti";
-const Header = () => {
+import { CiSearch } from "react-icons/ci";
+
+const Header = ({setSearchVisible ,searchVisible}) => {
   const [btnName, setBtnName] = useState("Login");
   const onlineStatus = useOnlineStatus();
 
+  const [searchShow , setSearchShow] = useState(false)
+ 
 // subscribing to the store using selector
   const cart = useSelector((store)=>store.cart.items);
 
   // console.log(cart)
 
   return (
-    <div className='flex justify-between items-center p-4 header'>
-      <div className="logo-container">
-        <img className='w-12' src={logo} alt="logo" />
-      </div>
-      <div className="nav-items">
-        <ul className="md:flex gap-8 text-lg hidden md:block">
-          <li><NavLink to={"/"} >Home</NavLink></li>
-          <li><NavLink to={"/about"} >About Us</NavLink></li>
-          <li><NavLink to={"/contact"}>Contact Us</NavLink></li>
-          <li className='flex justify-center items-center'>
+    <div className='flex justify-between items-center p-4 header shadow-lg'>
+      <Link to={'/'}>
+        <div className="cursor-pointer">
+        <img className='w-8 ml-6 hover:scale-110' src={logo} alt="logo" />
+        </div>
+      </Link>
+      <div className="nav-items hidden md:block">
+        <ul className="md:flex gap-8 text-lg flex items-center">
+          <li className={`flex flex-row items-center gap-2 justify-center cursor-pointer hover:text-orange-500 font-bold ${searchShow?'border-b-2':''}`} ><CiSearch/><input type="text" className={`${searchShow?'block':'hidden'} border-0 outline-none focus:border-0 text-sm p-2 rounded-lg transition-all ease-in-out duration-2000`} autoFocus /><span onClick={()=>{setSearchShow(!searchShow)}} >Search</span></li>
+          <li className=' hover:text-orange-500 font-bold'><NavLink to={"/"} >Home</NavLink></li>
+          <li className=' hover:text-orange-500 font-bold'><NavLink to={"/about"} >About Us</NavLink></li>
+          <li className=' hover:text-orange-500 font-bold'><NavLink to={"/contact"}>Contact Us</NavLink></li>
+          <li className='flex justify-center items-center  hover:text-orange-500 font-bold'>
             <Link to = {"/cart"}>
               <div className="flex relative">
               <TiShoppingCart size={30} />
@@ -35,7 +42,7 @@ const Header = () => {
               </div>
             </Link>
             </li>
-          <li>Status {onlineStatus ? "✅" : "🔴"}</li>
+          {/* <li>Status {onlineStatus ? "✅" : "🔴"}</li> */}
           <button className='w-20 px-2 py-1 border rounded cursor-pointer transition-all ease-in-out text-slate-500' onClick={() => { btnName === "Login" ? setBtnName("Logout") : setBtnName("Login") }}>{btnName}</button>
         </ul>
       </div>
