@@ -4,7 +4,7 @@
 
  export const MENU_API_URL ="https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&"
 
- export const CORS_URL = "https://corsproxy.org/?"
+ export const CORS_URL = "https://cors.zme.ink/"
 
  export const MOB_REST_API =
   "https://www.swiggy.com/mapi/restaurants/list/v5?"
