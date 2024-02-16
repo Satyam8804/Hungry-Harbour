@@ -71,7 +71,7 @@ const Body = ({ searchVisible }) => {
 
       {/*whats on mind  */}
 
-      <div className="w-full md:w-10/12 p-4 border-b-2">
+      <div className="w-full md:w-10/12 sm:p-4 border-b-2">
         <div className="">
           <span className="text-2xl font-extrabold">
             {whatOnMind?.header?.title}
@@ -91,19 +91,21 @@ const Body = ({ searchVisible }) => {
         </div>
       </div>
 
-      <div className="w-full md:w-10/12 p-4 border-b-2">
+      <div className="w-full sm:w-10/12 p-4 border-b-2">
         <div className="">
           <span className="text-2xl font-extrabold">
             {restroChain?.header?.title}
           </span>
         </div>
 
-        <div className="flex flex-row px-4 py-4 overflow-x-scroll scroll justify-between">
+        <div className="flex flex-row sm:px-4 py-4 overflow-x-scroll scroll justify-start">
           {restaurants &&
             restaurants.map((item) => (
               <RestaurantCard
                 restaurantData={item?.info}
                 key={item?.info?.id}
+                flex ={'col'}
+                width= {'150px'}
               />
             ))}
         </div>
@@ -125,6 +127,8 @@ const Body = ({ searchVisible }) => {
               <RestaurantCard
                 restaurantData={data?.info}
                 key={data?.info?.id}
+                flex ={'row'}
+                width = {'full'}
               />
             ))
           )}
