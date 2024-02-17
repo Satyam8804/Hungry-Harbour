@@ -49,7 +49,7 @@ const RestaurantMenu = () => {
   }, [resInfo, window.innerWidth]);
 
   if (resInfo === null || !resInfo?.cards ) {
-    return <h1>Fetching...</h1>
+    return <Shimmer/>
   }
 
   const resDetails = window.innerWidth <= 768? resInfo?.cards[2]?.card?.card?.info :resInfo?.cards[0]?.card?.card?.info ;
