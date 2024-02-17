@@ -15,16 +15,16 @@ const useRestaurant = () =>{
 
     // bangalore
 
-    let lat = '13.00535708692319'
-    let lng =  '77.58995360194062'
+    // let lat = '13.00535708692319'
+    // let lng =  '77.58995360194062'
 
     useEffect(()=>{
         const fetchData = async () => {
             try {
 
-                const apiURL = window.innerWidth <= 768 ? MOB_REST_API+"&offset=0&is-seo-homepage-enabled=true&carousel=true&third_party_vendor=1&" : API_URL+"&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING&";
+                const apiURL = window.innerWidth <= 768 ? MOB_REST_API : API_URL;
         
-                const data = await fetch(CORS_URL+apiURL+"lat="+lat + "&lng="+ lng);
+                const data = await fetch(CORS_URL+apiURL+"lat="+userLocation?.latitude + "&lng="+ userLocation?.longitude);
                 if (!data.ok) {
                     throw new Error("Network response was not ok");
                 }
