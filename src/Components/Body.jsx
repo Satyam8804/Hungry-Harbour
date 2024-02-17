@@ -48,7 +48,7 @@ const Body = ({ searchVisible }) => {
     <Shimmer />
   ) : (
     <div className="flex flex-col items-center justify-center gap-8 sm:w-full p-2">
-      <div className={`w-full sm:p-4 ${searchVisible ? "hidden" : "hidden"}`}>
+      <div className={`w-full sm:p-4 ${searchVisible ? "block" : "block"}`}>
         <div className="flex items-center justify-center gap-4">
           <input
             type="text"

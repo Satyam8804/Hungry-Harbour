@@ -26,7 +26,7 @@ const RestaurantCard = ({ restaurantData,flex ,width}) => {
           <span className="text-sm text-gray-500 font-bold ">{avgRating} stars</span>
           <span className="text-sm text-gray-500 font-bold ">{sla.deliveryTime} mins</span>
         </div>
-        <span className="text-sm block text-gray-500 overflow-hidden overflow-ellipsis whitespace-nowrap no-underline text-nowrap">
+        <span className={`text-sm block text-gray-500 w-${width} overflow-hidden overflow-hidden whitespace-nowrap`}>
           {cuisines.slice(0, 3).join(",")}
         </span>
        <span className="text-sm text-gray-500">{areaName}</span>

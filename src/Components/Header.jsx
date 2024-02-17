@@ -24,12 +24,12 @@ const Header = ({setSearchVisible ,searchVisible}) => {
         <img className='w-8 ml-6 hover:scale-110' src={logo} alt="logo" />
         </div>
       </Link>
-      <div className="nav-items hidden md:block">
-        <ul className="md:flex gap-8 text-lg flex items-center">
-          <li className={`flex flex-row items-center gap-2 justify-center cursor-pointer hover:text-orange-500 font-bold ${searchShow?'border-b-2':''}`} ><CiSearch/><input type="text" className={`${searchShow?'block':'hidden'} border-0 outline-none focus:border-0 text-sm p-2 rounded-lg transition-all ease-in-out duration-2000`} autoFocus /><span onClick={()=>{setSearchShow(!searchShow)}} >Search</span></li>
+      <div className="sm:relative sm:block fixed bottom-0 flex  left-0 w-full sm:w-auto bg-white h-16 justify-center z-10">
+        <ul className="md:flex sm:gap-8 text-lg flex items-center justify-evenly w-full">
+          <li className={`flex flex-row items-center gap-2 justify-center cursor-pointer hover:text-orange-500 font-bold ${searchShow?'border-b-2':''}`} ><input type="text" className={`${searchShow?'block':'hidden'} border-0 outline-none focus:border-0 text-sm p-2 rounded-lg transition-all ease-in-out duration-2000`} autoFocus /><CiSearch/><span onClick={()=>{setSearchShow(!searchShow)}} >Search</span></li>
           <li className=' hover:text-orange-500 font-bold'><NavLink to={"/"} >Home</NavLink></li>
-          <li className=' hover:text-orange-500 font-bold'><NavLink to={"/about"} >About Us</NavLink></li>
-          <li className=' hover:text-orange-500 font-bold'><NavLink to={"/contact"}>Contact Us</NavLink></li>
+          <li className=' hover:text-orange-500 font-bold hidden sm:block'><NavLink to={"/about"} >About Us</NavLink></li>
+          <li className=' hover:text-orange-500 font-bold hidden sm:block'><NavLink to={"/contact"}>Contact Us</NavLink></li>
           <li className='flex justify-center items-center  hover:text-orange-500 font-bold'>
             <Link to = {"/cart"}>
               <div className="flex relative">
@@ -43,7 +43,7 @@ const Header = ({setSearchVisible ,searchVisible}) => {
             </Link>
             </li>
           {/* <li>Status {onlineStatus ? "✅" : "🔴"}</li> */}
-          <button className='w-20 px-2 py-1 border rounded cursor-pointer transition-all ease-in-out text-slate-500' onClick={() => { btnName === "Login" ? setBtnName("Logout") : setBtnName("Login") }}>{btnName}</button>
+          <button className='w-20 px-2 py-1 border rounded cursor-pointer transition-all ease-in-out text-slate-500 hidden sm:block' onClick={() => { btnName === "Login" ? setBtnName("Logout") : setBtnName("Login") }}>{btnName}</button>
         </ul>
       </div>
     </div>
