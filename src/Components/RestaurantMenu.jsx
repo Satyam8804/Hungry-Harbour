@@ -53,7 +53,7 @@ const RestaurantMenu = () => {
   }
 
   const resDetails = window.innerWidth <= 768? resInfo?.cards[2]?.card?.card?.info :resInfo?.cards[0]?.card?.card?.info ;
-  // console.log(resDetails)
+  console.log(resDetails)
 
     return (
     <div className="w-full flex flex-col justify-center items-center bg-[#e9ecee]">
@@ -68,7 +68,7 @@ const RestaurantMenu = () => {
             isHeaderVisible ? "block" : "hidden"
           }`}
         >
-          <span className="text-sm font-bold">{resDetails.name}</span>
+          <span className="text-sm font-bold">{resDetails?.name}</span>
           <Link to={"/restaurants/" + resid + "/search"}>
             <CiSearch />
           </Link>

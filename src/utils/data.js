@@ -7,7 +7,7 @@
  export const MENU_API_URL ="https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&catalog_qa=undefined&submitAction=ENTER"
  export const MOB_MENU_API_URL ="https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&isMenuUx4=true&submitAction=ENTER"
 
- export const CORS_URL = "https://cors.zme.ink/"
+ export const CORS_URL = ""
 
  export const MOB_REST_API =
   "https://www.swiggy.com/mapi/restaurants/list/v5?&offset=0&is-seo-homepage-enabled=true&carousel=true&third_party_vendor=1&"
