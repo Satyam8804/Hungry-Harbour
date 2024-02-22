@@ -1,5 +1,5 @@
 import React from "react";
-import { IMG_URL, MOB_IMG_URL } from "../utils/data";
+import { IMG_URL } from "../utils/data";
 import { Link } from "react-router-dom";
 import { MdStars } from "react-icons/md";
 

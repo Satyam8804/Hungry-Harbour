@@ -10,7 +10,7 @@ import { addItems,removeItem } from "../utils/Slices/cartSlice";
 const Menus = ({ item }) => {
   const { name, description, defaultPrice, price, imageId, itemAttribute } =
     item?.card?.info;
-    console.log(item?.card?.info)
+    // console.log(item?.card?.info)
   const { vegClassifier } = itemAttribute;
 
   const [itemCount, setItemCount] = useState(0);

@@ -13,8 +13,6 @@ const RestaurantMenu = () => {
   const [showIdx, setShowIdx] = useState(0);
 
   const [category , setCategory] = useState(null)
-
-
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
@@ -30,30 +28,22 @@ const RestaurantMenu = () => {
   }, []);
 
   useEffect(()=>{
-    let apiURL = window.innerWidth <= 768;
-    // Ensure resInfo is available and not null before processing
-    if (resInfo && resInfo.cards) {
-      let categories = apiURL
-        ? resInfo.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter(
+
+    if (resInfo) {
+      let categories = resInfo.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter(
             (e) =>
               e?.card?.card?.["@type"] ===
               "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
           )
-        : resInfo.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter(
-            (e) =>
-              e?.card?.card?.["@type"] ===
-              "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
-          );
       setCategory(categories);
-    }
-  }, [resInfo, window.innerWidth]);
+   }
+  }, [resInfo, window?.innerWidth]);
 
   if (resInfo === null || !resInfo?.cards ) {
     return <Shimmer/>
   }
 
-  const resDetails = window.innerWidth <= 768? resInfo?.cards[2]?.card?.card?.info :resInfo?.cards[0]?.card?.card?.info ;
-  console.log(resDetails)
+  const resDetails = resInfo?.cards.filter((e)=> e?.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.Restaurant")[0]?.card?.card?.info;
 
     return (
     <div className="w-full flex flex-col justify-center items-center bg-[#e9ecee]">

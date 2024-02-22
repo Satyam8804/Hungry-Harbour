@@ -2,11 +2,10 @@ import React from "react";
 // import "./RestaurantMenu.css";
 
 const RestaurantInfo = ({ resDetails }) => {
+  
   const { name, cuisines, totalRatingsString, avgRating, areaName } = resDetails || {};
 
-  if (!name || !cuisines || !totalRatingsString || !avgRating || !areaName) {
-    return <div>Error: Invalid restaurant details</div>;
-  }
+  // console.log(resDetails)
 
   return (
     <div className="flex items-center justify-between w-full border-b-2 border-gray-300 pb-8 res-info " >

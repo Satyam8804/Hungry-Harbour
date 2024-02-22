@@ -12,7 +12,7 @@ const useRestaurant = () => {
   const [restroChain, setRestroChain] = useState(null);
   const [filter, setFilter] = useState(null);
 
-    console.log(restaurantData);
+    // console.log(restaurantData);
 
   const fetchData = async () => {
     try {
@@ -26,19 +26,12 @@ const useRestaurant = () => {
           "&lng=" +
           userLocation?.longitude
       );
-      console.log(
-        CORS_URL +
-          apiURL +
-          "lat=" +
-          userLocation?.latitude +
-          "&lng=" +
-          userLocation?.longitude
-      );
+
       if (!data.ok) {
         throw new Error("Network response was not ok");
       }
       const json = await data.json();
-      console.log(json);
+      
       setFilter(json?.data?.cards[3]?.card?.card?.facetList);
       setWhatOnMind(json?.data?.cards?.filter(
         (e) =>
@@ -99,6 +92,7 @@ const useRestaurant = () => {
     whatOnMind,
     restaurantData,
     title,
+    userLocation,
     filteredRestaurantData,
     setFilteredRestaurantData,
   };

@@ -71,7 +71,9 @@ const Body = ({ searchVisible }) => {
 
       {/*whats on mind  */}
 
-      <div className="w-full md:w-10/12 sm:p-4 border-b-2">
+      {
+        onMind && (
+          <div className="w-full md:w-10/12 sm:p-4 border-b-2">
         <div className="">
           <span className="text-2xl font-extrabold">
             {whatOnMind?.header?.title}
@@ -79,7 +81,7 @@ const Body = ({ searchVisible }) => {
         </div>
 
         <div className="flex flex-row px-4 py-4 overflow-x-scroll scroll">
-          {onMind &&
+          {
             onMind.map((item) => (
               <img
                 src={IMG_URL + item?.imageId}
@@ -90,8 +92,12 @@ const Body = ({ searchVisible }) => {
             ))}
         </div>
       </div>
+        )
+      }
 
-      <div className="w-full sm:w-10/12 p-4 border-b-2">
+      {
+        restaurants && (
+          <div className="w-full sm:w-10/12 p-4 border-b-2">
         <div className="">
           <span className="text-2xl font-extrabold">
             {restroChain?.header?.title}
@@ -110,6 +116,8 @@ const Body = ({ searchVisible }) => {
             ))}
         </div>
       </div>
+        )
+      }
 
       {/* online delivery */}
 
